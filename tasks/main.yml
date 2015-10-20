@@ -58,7 +58,7 @@
   shell: supervisorctl {{ item }}
   with_items:
   - reread
-  - reload
+  - update
 
 - name: start services
   supervisorctl:
