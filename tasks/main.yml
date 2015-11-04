@@ -68,3 +68,8 @@
   - elasticsearch
   - logstash
   - kibana
+
+- name: install elastichq locally
+  shell: '/usr/share/elasticsearch/bin/plugin -install royrusso/elasticsearch-HQ'
+  args:
+    creates: '/usr/share/elasticsearch/plugins/HQ'
