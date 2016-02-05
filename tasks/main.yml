@@ -54,16 +54,10 @@
   - logstash
   - kibana
 
-- name: reload supervisor
-  shell: supervisorctl {{ item }}
-  with_items:
-  - reread
-  - update
-
 - name: start services
   supervisorctl:
     name: "{{ item }}"
-    state: started
+    state: present
   with_items:
   - elasticsearch
   - logstash
